@@ -1,0 +1,21 @@
+{
+  "name": "nodejs-block",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kintohub/nodejs-block.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kintohub/nodejs-block/issues"
+  },
+  "homepage": "https://github.com/kintohub/nodejs-block#readme",
+  "dependencies": {
+    "node-http-server": "^8.1.2"
+  }
+}
