@@ -8,7 +8,7 @@ const router = new Router()
  * @api {post} /auth Authenticate
  * @apiName Authenticate
  * @apiGroup Auth
- * @apiParam {String} access_token Master access_token.
+ * @apiParam (Body) {String} access_token Master access_token.
  */
 router.post('/',
   master(),

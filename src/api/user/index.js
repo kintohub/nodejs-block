@@ -12,7 +12,7 @@ const { email, password, name, picture, role } = schema.tree
 /**
  * @api {get} /users Retrieve users
  * @apiName RetrieveUsers
- * @apiParam {String} access_token User access_token.
+ * @apiParam (Body) {String} access_token User access_token.
  */
 router.get('/',
   token({ required: true, roles: ['admin'] }),
@@ -22,7 +22,7 @@ router.get('/',
 /**
  * @api {get} /users/me Retrieve current user
  * @apiName RetrieveCurrentUser
- * @apiParam {String} access_token User access_token.
+ * @apiParam (Body) {String} access_token User access_token.
  */
 router.get('/me',
   token({ required: true }),
@@ -38,12 +38,12 @@ router.get('/:id',
 /**
  * @api {post} /users Create user
  * @apiName CreateUser
- * @apiParam {String} access_token Master access_token.
- * @apiParam {String} email User's email.
- * @apiParam {String{6..}} password User's password.
- * @apiParam {String} [name] User's name.
- * @apiParam {String} [picture] User's picture.
- * @apiParam {String=user,admin} [role=user] User's role.
+ * @apiParam (Body) {String} access_token Master access_token.
+ * @apiParam (Body) {String} email User's email.
+ * @apiParam (Body) {String{6..}} password User's password.
+ * @apiParam (Body) {String} [name] User's name.
+ * @apiParam (Body) {String} [picture] User's picture.
+ * @apiParam (Body) {String=user,admin} [role=user] User's role.
  */
 router.post('/',
   master(),
@@ -51,12 +51,11 @@ router.post('/',
   create)
 
 /**
- * @api {put} /users/:id Update user
+ * @api {put} /users/{id} Update user
  * @apiName UpdateUser
- * @apiParam {String} access_token User access_token.
- * @apiParam {String} [name] User's name.
- * @apiParam {String} [picture] User's picture.
- * @apiSuccess {Object} user User's data.
+ * @apiParam (Body) {String} access_token User access_token.
+ * @apiParam (Body) {String} [name] User's name.
+ * @apiParam (Body) {String} [picture] User's picture.
  */
 router.put('/:id',
   token({ required: true }),
@@ -64,10 +63,9 @@ router.put('/:id',
   update)
 
 /**
- * @api {put} /users/:id/password Update password
+ * @api {put} /users/{id}/password Update password
  * @apiName UpdatePassword
- * @apiParam {String{6..}} password User's new password.
- * @apiSuccess (Success 201) {Object} user User's data.
+ * @apiParam (Body) {String{6..}} password User's new password.
  */
 router.put('/:id/password',
   passwordAuth(),
@@ -75,10 +73,9 @@ router.put('/:id/password',
   updatePassword)
 
 /**
- * @api {delete} /users/:id Delete user
+ * @api {delete} /users/{id} Delete user
  * @apiName DeleteUser
- * @apiParam {String} access_token User access_token.
- * @apiSuccess (Success 204) 204 No Content.
+ * @apiParam (Body) {String} access_token User access_token.
  */
 router.delete('/:id',
   token({ required: true, roles: ['admin'] }),
