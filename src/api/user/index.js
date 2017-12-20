@@ -40,10 +40,10 @@ router.get('/:id',
  * @apiName CreateUser
  * @apiParam (Body) {String} access_token Master access_token.
  * @apiParam (Body) {String} email User's email.
- * @apiParam (Body) {String{6..}} password User's password.
+ * @apiParam (Body) {String} password User's password.
  * @apiParam (Body) {String} [name] User's name.
  * @apiParam (Body) {String} [picture] User's picture.
- * @apiParam (Body) {String=user,admin} [role=user] User's role.
+ * @apiParam (Body) {String} [role] User's role.
  */
 router.post('/',
   master(),
@@ -65,7 +65,7 @@ router.put('/:id',
 /**
  * @api {put} /users/{id}/password Update password
  * @apiName UpdatePassword
- * @apiParam (Body) {String{6..}} password User's new password.
+ * @apiParam (Body) {String} password User's new password.
  */
 router.put('/:id/password',
   passwordAuth(),
