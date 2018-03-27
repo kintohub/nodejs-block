@@ -1,10 +1,10 @@
 FROM node:8.9.4
 
-RUN mkdir -p usr/src/app
+RUN mkdir -p app
 
-WORKDIR /usr/src/app
+WORKDIR /app
 
-COPY . /usr/src/app
+COPY . /app
 
 RUN npm install
 
@@ -12,5 +12,5 @@ ENV PORT=80
 
 EXPOSE 80
 
-ENTRYPOINT ["npm","run","start"]
+ENTRYPOINT ["npm", "run", "start"]
 
