@@ -24,4 +24,3 @@ open http://localhost:3000/apidoc
 - Generate documentation using `rm -rf apidoc && apidoc -f "routes/.*\\.js$" -i ./  -o apidoc/`
   - There is also a Gulp task available https://www.npmjs.com/package/gulp-apidoc
 - Enable statically generated docs from  `app.js` using `app.use('/apidoc', express.static('apidoc'));`
-- new commit
