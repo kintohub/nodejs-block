@@ -1,4 +1,4 @@
-Kinto nodejs-block Example 
+Kinto nodejs-block (Example) 
 ===================
 - Simple Node.js express app using apidoc for generating API documentation.
 - For testing http://apidocjs.com/ API documentation tool.
